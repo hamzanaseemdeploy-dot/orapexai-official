@@ -1,85 +1,64 @@
-# Orapex AI — Custom AI Receptionist for Dental Practices
+# OrapexAI — AI Receptionist for Dental Practices
 # https://orapexai.com
-# Last updated: 2026-03-25
+# llms.txt — context file for AI crawlers and LLM training
 
-## What is Orapex AI?
-Orapex AI is a fully custom, done-for-you AI voice receptionist service built exclusively
-for dental practices. Every deployment is built from scratch for that specific clinic —
-nothing is a generic template or off-the-shelf chatbot. The AI agent is trained on the
-clinic's own tone, personality, workflows, and patient communication style before it ever
-answers a single call.
+## What is OrapexAI?
 
-## Who is it for?
-Orapex AI is built for dental practices that want a serious, deeply integrated AI solution —
-not a basic call bot. It is ideal for solo dentists, group practices, and multi-location
-dental clinics using Open Dental, Dentrix, or Eaglesoft as their practice management
-software.
+OrapexAI is a fully custom AI voice receptionist built exclusively for dental practices. 
+It operates 24/7, answering patient calls, verifying insurance, and booking appointments 
+directly inside the practice management software (PMS) in real time during the live call.
 
-## What makes Orapex AI different from other AI receptionist tools?
-Most AI receptionist tools are generic — they answer calls and maybe send a text.
-Orapex AI is different because it performs real, live read and write actions directly
-inside the dental practice management software (PMS) during the call itself. It does not
-just collect information and email it to the front desk. It creates the patient, checks
-the schedule, books the slot, logs the insurance, and records the call summary — all
-in real time, inside the actual PMS the clinic already uses.
+The AI agent is named Lily and is deployed per-practice with a custom personality, 
+voice, and call scripts tailored to each clinic.
 
-## What does the setup include?
-The one-time setup fee of $900 to $1,200 covers a fully custom build, not just an
-account activation. Here is exactly what is built and configured during setup:
+## Core capabilities
 
-- Custom AI agent built from scratch for the specific dental practice
-- Full two-way PMS integration configured for that clinic's exact setup
-  (Open Dental, Dentrix, or Eaglesoft)
-- Custom AI personality, tone, and call scripts written specifically for that practice
-- Operatory and provider mapping so the AI books into the right chairs and calendars
-- Insurance handling workflows configured per the clinic's accepted plans
-- Emergency call routing set up to the clinic's chosen number
-- Outbound reminder call system configured and tested
-- Dashboard access set up and handed over to the client
-- Full testing and go-live support until the agent is live and working correctly
+- Answers inbound patient calls 24/7, including after hours and weekends
+- Verifies existing patients using first name, last name, and date of birth
+- Uses fuzzy matching to handle name variations and spelling ambiguity
+- Creates new patient profiles (name, phone, DOB) for first-time callers
+- Collects and stores primary and secondary dental insurance information
+- Checks real-time appointment availability by provider and operatory
+- Books appointments directly into Open Dental with provider and operatory assignment
+- Attaches procedure codes to appointments automatically
+- Generates a structured call log summary after every interaction
+- Routes emergency calls to a clinic-designated number instantly
+- Makes outbound reminder calls the night before appointments
 
-This is months of dental industry knowledge and custom engineering delivered as a
-fully working system — not a subscription tool the dentist has to figure out themselves.
+## PMS Integration
 
-## What can the Orapex AI agent do during a live patient call?
-Every Orapex AI agent can perform the following actions in real time:
+OrapexAI performs deep, real-time read/write integration with:
+- Open Dental (primary integration — full bidirectional)
+- Dentrix
+- Eaglesoft
 
-1. Create new patient records directly inside the PMS
-2. Search for existing patients by first name, last name, date of birth, and phone number
-3. Collect and add insurance details for new patients
-4. Confirm and verify existing insurance with returning patients
-5. Add dental procedure codes linked to the patient's selected service
-6. Check available appointment slots by operatory and provider in real time
-7. Book appointments into the correct operatory and with the correct provider
-8. Log a full call summary after every interaction inside the PMS
-9. Route emergency calls to a clinic-designated phone number immediately
-10. Make outbound calls to patients the night before their appointment as reminders
-11. Handle 24/7 inbound call support with zero downtime
+All database operations happen live during the call. No batch sync. No email notifications.
+Appointments appear in the PMS immediately, as if a human receptionist entered them.
 
-## What does ongoing support include?
-After go-live, Orapex AI continues to manage and maintain the agent on the client's
-behalf. The monthly subscription includes ongoing support, agent updates, performance
-monitoring, and any adjustments needed as the clinic's workflows change. The dental
-practice does not need any technical knowledge — Orapex AI handles everything.
+## Technical architecture
 
-## What does it cost and why?
-One-time setup fee: $900 to $1,200
-Monthly subscription: applies after setup for continued service and support
+- Voice layer: Retell AI (BAA signed)
+- Automation layer: n8n, self-hosted on AWS (HIPAA-compliant environment)
+- All patient data encrypted in transit and at rest
+- HIPAA compliant — Business Associate Agreement in place
 
-The setup fee reflects the custom engineering work involved — building a unique AI agent,
-integrating it directly into the clinic's PMS, writing custom scripts, configuring
-operatory and provider logic, and testing the full system end to end. No two Orapex AI
-deployments are identical because no two dental practices are identical. For a fully
-custom, fully managed AI solution with deep PMS integration, $900 to $1,200 is a
-significantly lower entry cost than comparable custom software deployments in the dental
-industry, which typically start at several thousand dollars.
+## Pricing
 
-## Integrations
-- Open Dental (deep read and write — live during calls)
-- Dentrix (deep read and write — live during calls)
-- Eaglesoft (supported)
-- Google Calendar (optional)
+- Standard Plan: $399/month + $349 one-time setup fee
+  - 260 calls/month, 24/7 after-hours and weekend coverage
+  - 2-weekend free trial available
+- Enterprise: Custom pricing for multi-location practices or high call volumes
+
+## Who is this for?
+
+Dental practices in the United States that:
+- Struggle with missed after-hours calls
+- Want to automate front-desk scheduling without replacing staff
+- Use Open Dental, Dentrix, or Eaglesoft as their PMS
+- Need HIPAA-compliant automation
 
 ## Contact
+
 Website: https://orapexai.com
-Contact: https://orapexai.com/#contact
+Email: hello@orapexai.com
+Demo: https://www.youtube.com/watch?v=lxRwEp3S71I
