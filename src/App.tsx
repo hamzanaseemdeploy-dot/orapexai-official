@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'motion/react';
 import { PhoneCall, ArrowRight, Menu, X, Star, Instagram, Facebook, Linkedin, Phone, Play } from 'lucide-react';
+import OpenDentalPage from './components/OpenDentalPage';
 import Laptop from './components/Laptop';
 import ChatSimulation from './components/ChatSimulation';
 import FloatingFeatures from './components/FloatingFeatures';
