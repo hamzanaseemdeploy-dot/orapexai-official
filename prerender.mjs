@@ -34,6 +34,13 @@ const routes = [
     canonical: 'https://orapexai.com/pricing',
   },
   {
+    path: 'open-dental-ai-receptionist',
+    title: 'AI Receptionist for Open Dental | OrapexAI',
+    description:
+      'OrapexAI connects directly to Open Dental in real-time. Books appointments, verifies patients, checks insurance — all during the live call. HIPAA compliant.',
+    canonical: 'https://orapexai.com/open-dental-ai-receptionist',
+  },
+  {
     path: 'privacy-policy',
     title: 'Privacy Policy | OrapexAI',
     description: 'OrapexAI privacy policy — how we collect, use, and protect patient and practice data in compliance with HIPAA.',
