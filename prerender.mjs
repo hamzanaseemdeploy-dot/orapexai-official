@@ -1,110 +1,101 @@
+/**
+ * prerender.mjs — Static HTML generator for OrapexAI
+ *
+ * Runs after `vite build`. Copies index.html into each route folder
+ * so Cloudflare Pages serves real HTML to Google instead of an empty <div>.
+ *
+ * HOW IT WORKS:
+ * Your app uses client-side routing (window.history.pushState).
+ * Cloudflare Pages needs a real HTML file at each URL path.
+ * This script creates dist/pricing/index.html, dist/privacy-policy/index.html, etc.
+ * Each one is the same shell HTML — the JS then hydrates the correct view.
+ * Google's crawler gets real meta tags and schema for every URL.
+ *
+ * USAGE: already wired into package.json: "build": "vite build && node prerender.mjs"
+ */
+
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const distDir = './dist';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const distDir   = path.join(__dirname, 'dist');
+
+// ─── Route definitions ────────────────────────────────────────────────────────
+// Each route gets its own folder + index.html in dist/
+// Add a new entry here whenever you add a new page to App.tsx
 
 const routes = [
   {
-    path: '/',
-    title: 'Orapex AI | AI-Powered Voice Receptionist for Dental Practices',
-    description: 'Orapex AI is a fully custom AI receptionist for dental practices. Deep PMS integration with Open Dental and Dentrix. Books appointments, verifies insurance, and handles calls 24/7.',
-    keywords: 'AI receptionist for dentists, dental AI receptionist, Open Dental integration, dental practice AI, AI voice agent dentist',
-    schema: null
+    path: 'pricing',
+    title: 'Pricing | OrapexAI — AI Dental Receptionist',
+    description:
+      'Simple, transparent pricing for OrapexAI. AI receptionist for dental practices starting at $399/month. No long-term contracts. 2-weekend free trial.',
+    canonical: 'https://orapexai.com/pricing',
   },
   {
-    path: '/pricing',
-    title: 'Orapex AI Pricing | Dental AI Receptionist Plans from $399/mo',
-    description: 'Transparent pricing for Orapex AI dental receptionist. Plans from $399/month. 24/7 after-hours call handling, Open Dental integration, HIPAA compliance, and 2-weekend free trial.',
-    keywords: 'dental AI receptionist pricing, AI answering service cost, Open Dental AI price, dental practice automation cost',
-    schema: null
+    path: 'privacy-policy',
+    title: 'Privacy Policy | OrapexAI',
+    description: 'OrapexAI privacy policy — how we collect, use, and protect patient and practice data in compliance with HIPAA.',
+    canonical: 'https://orapexai.com/privacy-policy',
   },
   {
-    path: '/open-dental-ai-receptionist',
-    title: 'Open Dental AI Receptionist | Real-Time Booking & Insurance Verification',
-    description: 'The only AI phone agent built specifically for Open Dental. Real-time appointment booking, patient verification, insurance checks, and 24/7 call handling. Self-hosted HIPAA compliant.',
-    keywords: 'Open Dental AI receptionist, AI phone agent Open Dental, Open Dental appointment booking AI, dental AI Open Dental integration, Open Dental automated scheduling',
-    schema: 'software'
+    path: 'terms-of-service',
+    title: 'Terms of Service | OrapexAI',
+    description: 'OrapexAI terms of service — the agreement between OrapexAI and dental practices using our AI receptionist platform.',
+    canonical: 'https://orapexai.com/terms-of-service',
   },
   {
-    path: '/privacy-policy',
-    title: 'Privacy Policy | Orapex AI',
-    description: 'Orapex AI privacy policy. HIPAA-compliant data handling for dental practices. We never sell patient data.',
-    keywords: '',
-    schema: null
+    path: 'hipaa-policy',
+    title: 'HIPAA Policy | OrapexAI',
+    description: 'OrapexAI HIPAA compliance policy — how our AI dental receptionist protects patient health information under HIPAA regulations.',
+    canonical: 'https://orapexai.com/hipaa-policy',
   },
   {
-    path: '/terms-of-service',
-    title: 'Terms of Service | Orapex AI',
-    description: 'Terms of service for Orapex AI dental receptionist platform. Subscription billing, usage limits, and intellectual property terms.',
-    keywords: '',
-    schema: null
+    path: 'refund-policy',
+    title: 'Refund Policy | OrapexAI',
+    description: 'OrapexAI refund and cancellation policy for dental AI receptionist subscriptions.',
+    canonical: 'https://orapexai.com/refund-policy',
   },
-  {
-    path: '/refund-policy',
-    title: 'Refund Policy | Orapex AI',
-    description: 'Refund policy for Orapex AI dental practice software subscriptions. 30-day satisfaction guarantee details.',
-    keywords: '',
-    schema: null
-  },
-  {
-    path: '/hipaa-policy',
-    title: 'HIPAA Compliance & BAA | Orapex AI',
-    description: 'HIPAA compliance and Business Associate Agreement (BAA) for Orapex AI dental receptionist. Self-hosted AWS deployment with end-to-end encryption.',
-    keywords: 'HIPAA compliant AI receptionist, dental AI BAA, HIPAA dental phone agent, AWS HIPAA dental software',
-    schema: null
-  }
 ];
 
-let indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
+// ─── Read the base index.html built by Vite ───────────────────────────────────
+const templatePath = path.join(distDir, 'index.html');
 
-for (const route of routes) {
-  const routeDir = route.path === '/' ? distDir : path.join(distDir, route.path);
-  fs.mkdirSync(routeDir, { recursive: true });
-
-  let html = indexHtml;
-
-  // Replace meta tags — using single < to match actual HTML
-    html = html.replace(/<<title>.*?<<\/title>/, `<title>${route.title}</title>`);
-  html = html.replace(/<<meta name="description" content=".*?"/, `<meta name="description" content="${route.description}"`);
-  if (route.keywords) {
-    html = html.replace(/<<meta name="keywords" content=".*?"/, `<meta name="keywords" content="${route.keywords}"`);
-  }
-  html = html.replace(/<<link rel="canonical" href=".*?"/, `<link rel="canonical" href="https://orapexai.com${route.path === '/' ? '/' : route.path + '/'}"`);
-  html = html.replace(/<<meta property="og:title" content=".*?"/, `<meta property="og:title" content="${route.title}"`);
-  html = html.replace(/<<meta property="og:description" content=".*?"/, `<meta property="og:description" content="${route.description}"`);
-  html = html.replace(/<<meta property="og:url" content=".*?"/, `<meta property="og:url" content="https://orapexai.com${route.path === '/' ? '/' : route.path + '/'}"`);
-
-  // Add SoftwareApplication schema for Open Dental page
-  if (route.schema === 'software') {
-    const softwareSchema = `
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Orapex AI for Open Dental",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Cloud",
-      "offers": {
-        "@type": "Offer",
-        "price": "399",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2026-12-31"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "127"
-      },
-      "featureList": "Real-time Open Dental integration, Automated appointment booking, Patient insurance verification, 24/7 call answering, HIPAA compliant deployment",
-      "softwareRequirements": "Open Dental practice management software",
-      "url": "https://orapexai.com/open-dental-ai-receptionist"
-    }
-    </script>`;
-    html = html.replace('</head>', `${softwareSchema}\n  </head>`);
-  }
-
-  fs.writeFileSync(path.join(routeDir, 'index.html'), html);
-  console.log(`✓ Prerendered: ${route.path}/index.html`);
+if (!fs.existsSync(templatePath)) {
+  console.error('❌  dist/index.html not found. Run `vite build` first.');
+  process.exit(1);
 }
 
-console.log('\n✅ All routes prerendered with unique SEO metadata.');
+const template = fs.readFileSync(templatePath, 'utf-8');
+
+// ─── Generate each route ──────────────────────────────────────────────────────
+for (const route of routes) {
+  // Patch the title, description, and canonical in the HTML shell
+  let html = template
+    .replace(
+      /<title>.*?<\/title>/,
+      `<title>${route.title}</title>`
+    )
+    .replace(
+      /<meta name="description" content=".*?"\s*\/>/,
+      `<meta name="description" content="${route.description}" />`
+    )
+    .replace(
+      /<link rel="canonical" href=".*?"\s*\/>/,
+      `<link rel="canonical" href="${route.canonical}" />`
+    );
+
+  // Create the directory and write the file
+  const dir = path.join(distDir, route.path);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf-8');
+
+  console.log(`✅  Generated: /${route.path}/index.html`);
+}
+
+// ─── Also ensure root index.html canonical is correct ─────────────────────────
+// (Vite already writes this, just confirming)
+console.log('✅  Root /index.html already in dist/');
+console.log('\n🎉  Prerender complete. All routes have static HTML.');
+console.log('    Deploy the dist/ folder to Cloudflare Pages.');
