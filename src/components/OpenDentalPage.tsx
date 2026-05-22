@@ -94,8 +94,8 @@ const OpenDentalPage: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: Clock, title: "24/7 Call Capture", desc: "Emergency calls at 2 AM. Saturday scheduling. Holiday inquiries. Every call gets answered and booked." },
-              { icon: Lock, title: "Self-Hosted HIPAA", desc: "Deployed on your AWS account. Signed BAA with voice provider. End-to-end encryption. You control the data." },
-              { icon: Zap, title: "48-Hour Setup", desc: "We connect to your Open Dental database, configure your workflows, and go live in 48 hours. No IT team required." }
+              { icon: Lock, title: "Self-Hosted HIPAA", desc: "AWS infrastructure with end-to-end encryption. Dedicated tenant isolation. Signed BAA" },
+              { icon: Zap, title: "Custom Setup", desc: "We connect to your Open Dental database, configure your workflows, No IT team required." }
             ].map((card, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/30 transition-colors">
                 <card.icon className="text-cyan-400 mb-4" size={32} />
@@ -119,7 +119,7 @@ const OpenDentalPage: React.FC = () => {
               { q: "How does the AI confirm it's the right patient?", a: "It asks for first name, last name, and date of birth. Fuzzy matching handles typos and similar names. If confidence is low, it asks the patient to spell their name." },
               { q: "What about new patients not in the database?", a: "The AI creates a new patient profile automatically with name, phone, and DOB. Your staff completes remaining fields during check-in." },
               { q: "Which procedure codes does the AI assign?", a: "You set defaults during onboarding — typically D0120 (periodic eval), D0150 (comprehensive eval), D1110 (prophylaxis). Custom codes and multi-code appointments supported." },
-              { q: "Is patient data safe with this integration?", a: "Yes. Self-hosted on AWS in your account. Signed BAA. AES-256 encryption. We never use PHI for AI training. You can audit every database query." }
+              { q: "Is patient data safe with this integration?", a: "Yes. Our Infrastructure is Self-hosted. Signed BAA. AES-256 encryption. We never use PHI for AI training. You can audit every database query." }
             ].map((faq, i) => (
               <div key={i} className="bg-slate-900/30 border border-slate-800 rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-2 text-white">{faq.q}</h3>
