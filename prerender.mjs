@@ -64,7 +64,7 @@ for (const route of routes) {
   let html = indexHtml;
 
   // Replace meta tags — using single < to match actual HTML
-  html = html.replace(/<<title>.*?<<\/title>/, `<title>${route.title}</title>`);
+    html = html.replace(/<<title>.*?<<\/title>/, `<title>${route.title}</title>`);
   html = html.replace(/<<meta name="description" content=".*?"/, `<meta name="description" content="${route.description}"`);
   if (route.keywords) {
     html = html.replace(/<<meta name="keywords" content=".*?"/, `<meta name="keywords" content="${route.keywords}"`);
