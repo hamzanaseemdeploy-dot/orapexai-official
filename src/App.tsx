@@ -28,11 +28,12 @@ const pathToLegalTitle = (path: string): string => {
 };
 
 // Helper: determine which view to show from the current pathname
-const getViewFromPath = (path: string): { view: 'home' | 'legal' | 'pricing'; legalTitle: string } => {
+const getViewFromPath = (path: string): { view: 'home' | 'legal' | 'pricing' | 'open-dental'; legalTitle: string } => {
   // Normalize path: remove trailing slash and query/hash
   const normalizedPath = path.split(/[?#]/)[0].replace(/\/$/, '') || '/';
 
   if (normalizedPath === '/pricing') return { view: 'pricing', legalTitle: '' };
+  if (normalizedPath === '/open-dental-ai-receptionist') return { view: 'open-dental', legalTitle: '' };
   if (
     normalizedPath === '/privacy-policy' ||
     normalizedPath === '/terms-of-service' ||
@@ -50,7 +51,7 @@ export default function App() {
 
   // Initialize view from current URL
   const initial = getViewFromPath(window.location.pathname);
-  const [currentView, setCurrentView] = useState<'home' | 'legal' | 'pricing'>(initial.view);
+  const [currentView, setCurrentView] = useState<'home' | 'legal' | 'pricing' | 'open-dental'>(initial.view);
   const [legalPageTitle, setLegalPageTitle] = useState(initial.legalTitle);
 
   // Listen for browser back/forward navigation
@@ -361,6 +362,8 @@ export default function App() {
           <div id="contact"><ContactForm /></div>
           <div id="faq"><FAQ /></div>
         </>
+      ) : currentView === 'open-dental' ? (
+        <OpenDentalPage />
       ) : currentView === 'legal' ? (
         <LegalPage title={legalPageTitle} onBack={() => navigateTo('/')} />
       ) : (
