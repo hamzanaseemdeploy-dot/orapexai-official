@@ -45,12 +45,15 @@ const getViewFromPath = (path: string): { view: 'home' | 'legal' | 'pricing' | '
   return { view: 'home', legalTitle: '' };
 };
 
-export default function App() {
+export default function App({ initialPath }: { initialPath?: string } = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLiveDemoOpen, setIsLiveDemoOpen] = useState(false);
 
-  // Initialize view from current URL
-  const initial = getViewFromPath(window.location.pathname);
+  // Initialize view from current URL.
+  // During server-side prerendering there is no `window`, so we fall back
+  // to the `initialPath` prop passed in by prerender.tsx for that route.
+  const resolvedPath = initialPath ?? (typeof window !== 'undefined' ? window.location.pathname : '/');
+  const initial = getViewFromPath(resolvedPath);
   const [currentView, setCurrentView] = useState<'home' | 'legal' | 'pricing' | 'open-dental'>(initial.view);
   const [legalPageTitle, setLegalPageTitle] = useState(initial.legalTitle);
 
@@ -417,4 +420,3 @@ export default function App() {
     </div>
   );
 }
-
