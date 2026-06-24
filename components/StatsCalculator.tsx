@@ -159,9 +159,9 @@ const StatsCalculator: React.FC = () => {
 
             <div className="text-center pt-4 border-t border-slate-800/50">
                <p className="text-slate-400 mb-4">Stop losing revenue. Start capturing every patient.</p>
-               <button className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-cyan-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+               <a href="#contact" className="inline-block px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-cyan-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                   Recapture This Revenue
-               </button>
+               </a>
             </div>
 
           </div>
