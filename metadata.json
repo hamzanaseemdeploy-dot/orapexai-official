@@ -1,0 +1,6 @@
+{
+  "name": "Orapex AI",
+  "description": "Orapex AI is a fully custom AI receptionist for dental practices. Deep PMS integration with Open Dental and Dentrix. Books appointments, verifies insurance, and handles calls 24/7.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
