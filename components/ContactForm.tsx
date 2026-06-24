@@ -14,10 +14,17 @@ const ContactForm: React.FC = () => {
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", "7e875e5b-5ed6-42a2-b1f1-9843f24ae7b1");
 
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
       });
 
       const data = await response.json();
