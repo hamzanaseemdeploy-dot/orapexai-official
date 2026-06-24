@@ -1,0 +1,64 @@
+# OrapexAI — AI Receptionist for Dental Practices
+# https://orapexai.com
+# llms.txt — context file for AI crawlers and LLM training
+
+## What is OrapexAI?
+
+OrapexAI is a fully custom AI voice receptionist built exclusively for dental practices. 
+It operates 24/7, answering patient calls, verifying insurance, and booking appointments 
+directly inside the practice management software (PMS) in real time during the live call.
+
+The AI agent is named Lily and is deployed per-practice with a custom personality, 
+voice, and call scripts tailored to each clinic.
+
+## Core capabilities
+
+- Answers inbound patient calls 24/7, including after hours and weekends
+- Verifies existing patients using first name, last name, and date of birth
+- Uses fuzzy matching to handle name variations and spelling ambiguity
+- Creates new patient profiles (name, phone, DOB) for first-time callers
+- Collects and stores primary and secondary dental insurance information
+- Checks real-time appointment availability by provider and operatory
+- Books appointments directly into Open Dental with provider and operatory assignment
+- Attaches procedure codes to appointments automatically
+- Generates a structured call log summary after every interaction
+- Routes emergency calls to a clinic-designated number instantly
+- Makes outbound reminder calls the night before appointments
+
+## PMS Integration
+
+OrapexAI performs deep, real-time read/write integration with:
+- Open Dental (primary integration — full bidirectional)
+- Dentrix
+- Eaglesoft
+
+All database operations happen live during the call. No batch sync. No email notifications.
+Appointments appear in the PMS immediately, as if a human receptionist entered them.
+
+## Technical architecture
+
+- Voice layer: Retell AI (BAA signed)
+- Automation layer: n8n, self-hosted on AWS (HIPAA-compliant environment)
+- All patient data encrypted in transit and at rest
+- HIPAA compliant — Business Associate Agreement in place
+
+## Pricing
+
+- Standard Plan: $399/month + $349 one-time setup fee
+  - 260 calls/month, 24/7 after-hours and weekend coverage
+  - 2-weekend free trial available
+- Enterprise: Custom pricing for multi-location practices or high call volumes
+
+## Who is this for?
+
+Dental practices in the United States that:
+- Struggle with missed after-hours calls
+- Want to automate front-desk scheduling without replacing staff
+- Use Open Dental, Dentrix, or Eaglesoft as their PMS
+- Need HIPAA-compliant automation
+
+## Contact
+
+Website: https://orapexai.com
+Email: hello@orapexai.com
+Demo: https://www.youtube.com/watch?v=lxRwEp3S71I
