@@ -6,9 +6,11 @@ import { Send, Mail, Phone, MapPin, CheckCircle, Loader2 } from 'lucide-react';
 
 const ContactForm: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrorMessage('');
     setFormState('submitting');
     
     const formData = new FormData(e.currentTarget);
@@ -29,14 +31,16 @@ const ContactForm: React.FC = () => {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.status === 200 || data.success) {
         setFormState('success');
       } else {
         console.error("Error", data);
+        setErrorMessage(data.message || 'Failed to send message. Please try again.');
         setFormState('idle');
       }
     } catch (error) {
       console.error("Error", error);
+      setErrorMessage('A network error occurred. Please try again later.');
       setFormState('idle');
     }
   };
@@ -159,8 +163,14 @@ const ContactForm: React.FC = () => {
 
                            <div className="space-y-2">
                                 <label className="text-xs text-slate-400 font-bold uppercase tracking-wider ml-1">Message</label>
-                                <textarea rows={4} name="message" className={inputClasses} placeholder="Tell us about your needs..." />
+                                <textarea rows={4} name="message" required className={inputClasses} placeholder="Tell us about your needs..." />
                            </div>
+
+                           {errorMessage && (
+                               <div className="text-red-400 text-sm font-medium p-3 bg-red-400/10 rounded-lg border border-red-400/20">
+                                   {errorMessage}
+                               </div>
+                           )}
 
                            <button 
                                 type="submit" 
