@@ -44,6 +44,23 @@ const FAQ: React.FC = () => {
 
   return (
     <section id="faq" className="py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(item => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+              }
+            }))
+          })
+        }}
+      />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-900/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
