@@ -12,6 +12,43 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-slate-950 text-white selection:bg-cyan-500/30" suppressHydrationWarning>
+        {/* JSON-LD Schema for LLMO & AEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "OrapexAI",
+                  "operatingSystem": "Web, Cloud",
+                  "applicationCategory": "MedicalApplication",
+                  "applicationSubCategory": "Dental Practice Management",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "399.00",
+                    "priceCurrency": "USD"
+                  },
+                  "featureList": [
+                    "24/7 AI Voice Receptionist",
+                    "Real-time Open Dental Integration",
+                    "Live Appointment Booking",
+                    "Patient Verification via Fuzzy Logic",
+                    "Primary/Secondary Insurance Mapping",
+                    "Automated Procedure Code Assignment"
+                  ]
+                },
+                {
+                  "@type": "MedicalBusiness",
+                  "name": "OrapexAI",
+                  "description": "HIPAA compliant AI dental receptionist for Open Dental software.",
+                  "url": "https://orapexai.com"
+                }
+              ]
+            })
+          }}
+        />
         <Navigation />
         {children}
         <Footer />
