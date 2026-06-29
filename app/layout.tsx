@@ -12,7 +12,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-slate-950 text-white selection:bg-cyan-500/30" suppressHydrationWarning>
-        {/* JSON-LD Schema for LLMO & AEO */}
+        {/* SEO & AEO Schema: Tells search engines exactly what OrapexAI is */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
