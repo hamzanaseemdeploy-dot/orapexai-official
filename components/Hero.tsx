@@ -48,6 +48,9 @@ export default function Hero() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x drop-shadow-[0_0_30px_rgba(6,182,212,0.3)]">
               Patient Call
             </span>
+            <span className="block text-2xl md:text-4xl mt-4 text-slate-300 font-medium normal-case tracking-normal">
+              The AI Receptionist for Dental Practices
+            </span>
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light">
             The AI receptionist that answers phones, verifies insurance, and books appointments 24/7. No missed calls = <span className="text-white font-semibold underline decoration-cyan-500 underline-offset-4 decoration-2">More Revenue</span>.
