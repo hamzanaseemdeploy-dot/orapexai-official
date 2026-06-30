@@ -62,3 +62,6 @@ Dental practices in the United States that:
 Website: https://orapexai.com
 Email: hello@orapexai.com
 Demo: https://www.youtube.com/watch?v=lxRwEp3S71I
+
+## Educational Resources
+- [The Complete Guide to Open Dental Automation](https://orapexai.com/open-dental-automation): Explains how dental practices can automate appointment scheduling, patient verification, and insurance mapping directly inside Open Dental using HIPAA-compliant AI.
