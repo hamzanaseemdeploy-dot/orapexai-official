@@ -155,6 +155,20 @@ const ContactForm: React.FC = () => {
                                 <label className="text-xs text-slate-400 font-bold uppercase tracking-wider ml-1">Email Address</label>
                                 <input type="email" name="email" required className={inputClasses} placeholder="john@example.com" />
                            </div>
+                           <div className="space-y-2">
+                                <label className="text-xs text-slate-400 font-bold uppercase tracking-wider ml-1">How did you hear about us?</label>
+                                <select name="attribution" required className={inputClasses} defaultValue="">
+                                    <option value="" disabled>Select an option...</option>
+                                    <option value="Google Search">Google Search</option>
+                                    <option value="Google AI Overview">Google AI Overview</option>
+                                    <option value="ChatGPT">ChatGPT</option>
+                                    <option value="Perplexity">Perplexity</option>
+                                    <option value="Claude">Claude</option>
+                                    <option value="Referral / Word of Mouth">Referral / Word of Mouth</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                           </div>
 
                            <div className="space-y-2">
                                 <label className="text-xs text-slate-400 font-bold uppercase tracking-wider ml-1">Practice Name</label>
