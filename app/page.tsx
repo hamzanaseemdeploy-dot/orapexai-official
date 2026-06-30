@@ -5,6 +5,7 @@ import TechnologiesBanner from '@/components/TechnologiesBanner';
 import StatsCalculator from '@/components/StatsCalculator';
 import ContactForm from '@/components/ContactForm';
 import FAQ from '@/components/FAQ';
+import AeoSiloLinks from '@/components/AeoSiloLinks'; // Add this import
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Features />
       <TechnologiesBanner />
       <StatsCalculator />
+      <AeoSiloLinks /> {/* Add it right here, before the Contact Form */}
       <ContactForm />
       <FAQ />
     </div>
