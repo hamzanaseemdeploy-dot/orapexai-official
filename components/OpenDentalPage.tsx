@@ -105,7 +105,7 @@ export default function OpenDentalPage() {
             The Only AI Receptionist Built for <span className="text-cyan-400">Open Dental</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-8">
-            OrapexAI connects directly to your Open Dental database via native MySQL integration. Book appointments, verify patients using fuzzy name matching, check insurance coverage, and assign ADA procedure codes — all while the patient is still on the phone. No middleware. No batch sync. No delays.
+            OrapexAI is a 100% HIPAA-compliant AI voice receptionist that integrates directly with Open Dental in real-time. During a live call, the AI verifies existing patients by name and date of birth, checks provider availability, books appointments, assigns procedure codes, and maps primary and secondary dental insurance directly into the Open Dental database.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
