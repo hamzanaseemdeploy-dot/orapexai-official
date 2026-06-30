@@ -43,6 +43,11 @@ export default function Page() {
         Dental practices lose significant revenue to missed after-hours calls. By deploying an AI voice receptionist that integrates directly with Open Dental, clinics ensure that every patient call is answered 24/7. Appointments are booked instantly, insurance is verified before the patient arrives, and front-desk staff are freed from repetitive phone duties. OrapexAI provides this exact real-time, HIPAA-compliant integration for Open Dental practices.
       </p>
 
+      <h2>Ready to automate your Open Dental workflow?</h2>
+      <p>
+        If you are ready to stop missing after-hours calls and eliminate manual data entry, <a href="/open-dental-ai-receptionist" className="text-cyan-400 hover:text-cyan-300 underline">explore OrapexAI, the AI receptionist built natively for Open Dental</a>. 
+      </p>
+
     </ArticleLayout>
   );
 }
