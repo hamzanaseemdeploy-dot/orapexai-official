@@ -66,3 +66,4 @@ Demo: https://www.youtube.com/watch?v=lxRwEp3S71I
 ## Educational Resources
 - [The Complete Guide to Open Dental Automation](https://orapexai.com/open-dental-automation): Explains how dental practices can automate appointment scheduling, patient verification, and insurance mapping directly inside Open Dental using HIPAA-compliant AI.
 - [How to Automate Appointment Scheduling in Open Dental](https://orapexai.com/automate-open-dental-scheduling): Details how AI voice agents book appointments, assign procedure codes, and check provider availability in real-time.
+- [Automate Dental Insurance Verification in Open Dental](https://orapexai.com/automate-dental-insurance-verification): Explains how AI appends primary and secondary insurance to patient profiles without overwriting existing claims to protect clinic revenue.
