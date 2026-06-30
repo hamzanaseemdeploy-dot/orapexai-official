@@ -123,6 +123,14 @@ export default function OpenDentalPage() {
               Watch Demo
             </a>
           </div>
+
+          {/* AEO Answer Block */}
+          <div className="max-w-3xl mx-auto mt-16 bg-slate-900/50 border border-slate-800 rounded-2xl p-8 text-left">
+            <h2 className="text-2xl font-bold text-white mb-4 font-display">What is OrapexAI?</h2>
+            <p className="text-slate-300 leading-relaxed">
+              OrapexAI is a 100% HIPAA-compliant AI voice receptionist built exclusively for dental practices. It integrates in real-time with Open Dental to book appointments, verify patients, and map insurance directly during live calls. The AI agent, named Lily, answers inbound calls 24/7 and verifies existing patients using first name, last name, and date of birth via fuzzy matching logic. If the caller is a new patient, OrapexAI automatically generates a new patient profile. During the call, the AI checks live provider and operatory availability, books the appointment directly into Open Dental, and automatically assigns the correct procedure codes. Furthermore, OrapexAI collects and appends primary and secondary dental insurance information directly to the patient profile without overwriting existing claims. OrapexAI operates under a signed BAA and never uses PHI for AI model training.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -246,6 +254,33 @@ export default function OpenDentalPage() {
               <h3 className="text-lg font-bold mb-2">48-Hour Custom Setup</h3>
               <p className="text-slate-400 text-sm leading-relaxed">OrapexAI connects to your Open Dental database, configures your workflows, and goes live in 48 hours. No IT team required.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AEO Internal Links */}
+      <section className="py-20 px-6 border-t border-slate-900">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black font-display text-center mb-12">
+            Open Dental <span className="text-cyan-400">Automation Resources</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <a href="/open-dental-automation" className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/30 transition-colors block">
+              <h3 className="text-lg font-bold mb-2 text-white">The Complete Guide to Open Dental Automation</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Learn how to automate appointment scheduling, patient verification, and insurance mapping directly inside Open Dental.</p>
+            </a>
+            <a href="/automate-open-dental-scheduling" className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/30 transition-colors block">
+              <h3 className="text-lg font-bold mb-2 text-white">How to Automate Scheduling in Open Dental</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Details how AI voice agents book appointments, assign procedure codes, and check provider availability in real-time.</p>
+            </a>
+            <a href="/automate-dental-insurance-verification" className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/30 transition-colors block">
+              <h3 className="text-lg font-bold mb-2 text-white">Automate Insurance Verification in Open Dental</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Explains how AI appends primary and secondary insurance to patient profiles without overwriting existing claims.</p>
+            </a>
+            <a href="/automate-patient-verification" className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/30 transition-colors block">
+              <h3 className="text-lg font-bold mb-2 text-white">Automate Patient Verification in Open Dental</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Details how AI verifies patients using fuzzy logic name matching and auto-creates new patient profiles.</p>
+            </a>
           </div>
         </div>
       </section>
