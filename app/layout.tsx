@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Orapex AI | AI-Powered Voice Agents for Dental Practices',
+  title: 'OrapexAI | AI-Powered Voice Agents for Dental Practices',
   description: 'Orapex AI is a fully custom AI receptionist for dental practices. Deep PMS integration with Open Dental and Dentrix. Books appointments, verifies insurance, and handles calls 24/7. Setup from $900.',
 };
 
