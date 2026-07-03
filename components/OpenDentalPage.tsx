@@ -115,7 +115,7 @@ export default function OpenDentalPage() {
               Start Free Trial <ArrowRight size={20} />
             </Link>
             <a
-              href="https://www.youtube.com/watch?v=lxRwEp3S71I"
+              href="https://www.youtube.com/watch?v=OToXjScexno"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 hover:bg-white/20 px-8 py-4 rounded-full font-bold text-lg transition-all border border-white/10"
