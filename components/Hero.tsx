@@ -41,7 +41,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-800 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 font-display">
             <Star size={12} className="fill-current" />
-            Built Exclusively for Dental Practices
+            Built Exclusively For Dental Practices
           </div>
           <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-6 font-display uppercase leading-none">
             Never Miss a <br className="hidden md:block" />
