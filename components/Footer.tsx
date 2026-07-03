@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Instagram, Youtube, Linkedin } from 'lucide-react';
 import Logo from './Logo';
 
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
               Revolutionizing dental practice management with intelligent automation. No missed calls, just more smiles.
             </p>
             <div className="text-slate-600 text-sm">
-              © 2024 OrapexAI Inc. All rights reserved.
+              © {new Date().getFullYear()} OrapexAI Inc. All rights reserved.
             </div>
           </div>
 
@@ -34,13 +34,13 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold font-display mb-6">Connect with Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-50/10 hover:border-cyan-500 hover:text-cyan-400 transition-all">
+              <a href="https://www.instagram.com/orapexai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-50/10 hover:border-cyan-500 hover:text-cyan-400 transition-all">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-50/10 hover:border-cyan-500 hover:text-cyan-400 transition-all">
-                <Facebook size={20} />
+              <a href="http://www.youtube.com/@OrapexAI" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-50/10 hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                <Youtube size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-50/10 hover:border-cyan-500 hover:text-cyan-400 transition-all">
+              <a href="https://www.linkedin.com/in/hamza-orapexai" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-50/10 hover:border-cyan-500 hover:text-cyan-400 transition-all">
                 <Linkedin size={20} />
               </a>
             </div>
