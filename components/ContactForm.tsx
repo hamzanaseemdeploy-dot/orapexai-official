@@ -92,7 +92,7 @@ const ContactForm: React.FC = () => {
                             </div>
                             <div>
                                 <div className="text-sm text-slate-500 font-medium">Call Us</div>
-                                <div className="text-white font-semibold tracking-wide">+1 (555) 123-4567</div>
+                                <div className="text-white font-semibold tracking-wide">(312) 757-0562</div>
                             </div>
                         </motion.div>
                         
@@ -105,7 +105,7 @@ const ContactForm: React.FC = () => {
                             </div>
                             <div>
                                 <div className="text-sm text-slate-500 font-medium">HQ</div>
-                                <div className="text-white font-semibold tracking-wide">San Francisco, CA</div>
+                                <div className="text-white font-semibold tracking-wide">5335 N California Ave, Chicago, IL 60625</div>
                             </div>
                         </motion.div>
                     </div>
