@@ -194,7 +194,7 @@ export default function OpenDentalPage() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-slate-300 text-sm">
                   <CheckCircle className="text-cyan-400 shrink-0 mt-0.5" size={16} />
-                  Direct MySQL connection to Open Dental database
+                  Secure API key integration with Open Dental
                 </li>
                 <li className="flex items-start gap-3 text-slate-300 text-sm">
                   <CheckCircle className="text-cyan-400 shrink-0 mt-0.5" size={16} />
