@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'OrapexAI | AI-Powered Voice Agents for Dental Practices',
-  description: 'Orapex AI is a fully custom AI receptionist for dental practices. Deep PMS integration with Open Dental and Dentrix. Books appointments, verifies insurance, and handles calls 24/7. Setup from $900.',
+  description: 'OrapexAI is a fully custom AI receptionist for dental practices. Deep PMS integration with Open Dental and Dentrix. Books appointments, verifies insurance, and handles calls 24/7.',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
