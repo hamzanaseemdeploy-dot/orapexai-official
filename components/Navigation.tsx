@@ -48,7 +48,7 @@ export default function Navigation() {
   };
 
   const openDemoVideo = () => {
-    window.open('https://www.youtube.com/watch?v=lxRwEp3S71I', '_blank');
+    window.open('https://www.youtube.com/watch?v=OToXjScexno', '_blank');
   };
 
   return (
