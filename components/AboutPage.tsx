@@ -44,7 +44,7 @@ export default function AboutPage() {
             <div className="md:col-span-1 flex flex-col items-center text-center">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.3)] mb-4">
                 <img 
-                  src="/founder-hamza.jpg" 
+                  src="/founder-hamza.png" 
                   alt="Hamza Naseem, Founder of OrapexAI" 
                   className="w-full h-full object-cover"
                 />
