@@ -22,7 +22,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold font-display mb-6">Legal</h4>
+            <h4 className="text-white font-bold font-display mb-6">Company</h4>
+            <ul className="space-y-4 text-slate-400 text-sm">
+              <li><Link href="/about" className="hover:text-cyan-400 transition-colors">About OrapexAI</Link></li>
+            </ul>
+            <h4 className="text-white font-bold font-display mb-6 mt-8">Legal</h4>
             <ul className="space-y-4 text-slate-400 text-sm">
               <li><Link href="/privacy-policy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-cyan-400 transition-colors">Terms of Service</Link></li>
