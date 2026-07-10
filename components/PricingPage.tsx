@@ -18,8 +18,8 @@ export default function PricingPage() {
       name: "Standard Plan",
       badge: "The Weekend Warrior",
       description: "Capture high-value after-hours revenue for single-location practices.",
-      monthlyPrice: 399,
-      yearlyPrice: 3830,
+      monthlyPrice: 499,
+      yearlyPrice: 4790,
       setupFee: "$349 setup fee (Waived with 3-mo contract)",
       features: [
         "260 Calls / Month",
