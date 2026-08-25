@@ -22,7 +22,7 @@ export default function OpenDentalPage() {
                 "operatingSystem": "Open Dental",
                 "offers": {
                   "@type": "Offer",
-                  "price": "399",
+                  "price": "499",
                   "priceCurrency": "USD",
                   "priceValidUntil": "2026-12-31",
                   "availability": "https://schema.org/InStock"
