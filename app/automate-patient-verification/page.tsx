@@ -18,7 +18,7 @@ export default function Page() {
 
       <h2>How does AI verify existing patients in Open Dental?</h2>
       <p>
-        An AI receptionist like OrapexAI verifies existing patients by asking the caller for their first name, last name, and date of birth. The AI sends a secure query to the Open Dental MySQL database. If the caller’s details match an existing profile, the AI confirms the identity and proceeds with scheduling or insurance capture.
+               An AI receptionist like OrapexAI verifies existing patients by asking the caller for their first name, last name, and date of birth. The AI sends a secure query to the Open Dental API. If the caller’s details match an existing profile, the AI confirms the identity and proceeds with scheduling or insurance capture.
       </p>
 
       <h2>What happens if the patient spells their name wrong?</h2>
