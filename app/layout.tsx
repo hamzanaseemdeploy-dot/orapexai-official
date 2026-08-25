@@ -27,7 +27,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                   "applicationSubCategory": "Dental Practice Management",
                   "offers": {
                     "@type": "Offer",
-                    "price": "399.00",
+                    "price": "499.00",
                     "priceCurrency": "USD"
                   },
                   "featureList": [
