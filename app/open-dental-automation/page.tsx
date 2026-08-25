@@ -18,7 +18,7 @@ export default function Page() {
 
       <h2>How does AI integrate with Open Dental?</h2>
       <p>
-        AI voice agents integrate with Open Dental via a direct MySQL database connection. Unlike legacy answering services that require manual data entry or batch syncing, an AI receptionist like OrapexAI performs real-time read and write operations during a live phone call. This allows the AI to query provider availability, write appointments directly to the schedule, and attach procedure codes instantly.
+                AI voice agents integrate with Open Dental via secure API keys. Unlike legacy answering services that require manual data entry or batch syncing, an AI receptionist like OrapexAI performs real-time read and write operations during a live phone call. This allows the AI to query provider availability, write appointments directly to the schedule, and attach procedure codes instantly.
       </p>
 
       <h2>What front-desk tasks can be automated in Open Dental?</h2>
