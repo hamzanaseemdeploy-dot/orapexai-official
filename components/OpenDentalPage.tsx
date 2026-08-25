@@ -27,7 +27,7 @@ export default function OpenDentalPage() {
                   "priceValidUntil": "2026-12-31",
                   "availability": "https://schema.org/InStock"
                 },
-                "featureList": "Direct MySQL connection, real-time read/write, fuzzy patient matching by name and date of birth, automatic ADA procedure code assignment, provider and operatory-aware scheduling, new patient profile auto-creation, insurance carrier validation, call log summary appended to patient notes",
+                "featureList": "Secure API key integration, real-time read/write, fuzzy patient matching by name and date of birth, automatic ADA procedure code assignment, provider and operatory-aware scheduling, new patient profile auto-creation, insurance carrier validation, call log summary appended to patient notes",
                 "requirements": "Open Dental database credentials",
                 "softwareHelp": {
                   "@type": "CreativeWork",
